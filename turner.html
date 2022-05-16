@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <title>Turners Search Engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="http://" type="image/x-icon">   
+    <link rel="stylesheet" href="https://hosteduxprod.blob.core.windows.net/public-files/3.3.3/CssTheme.3.css"> 
+    <link rel="stylesheet" href="turnerStyle.css">
+  </head>
+
+  <body>
+    <div id="top-bar" class="top-bar top-bar-custom">
+      <a target="_blank" href="http://">
+      <img src="https://content.tgstatic.co.nz/webassets/assets/images/logo/square_logo_turners.png" 
+      class="top-bar-brand" alt="Site logo" onerror="this.style.display='none'">
+          <h2>Turners Search Engine</h2>
+      </a>
+  </div>
+  <div class="main-content">
+  
+    <script>
+    var url = "https://api.bing.microsoft.com/v7.0/custom/search?q=&customconfig=765644ad-9eda-444c-9b99-544340bd8cdc&mkt=en-US";
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+
+    xhr.setRequestHeader("Ocp-Apim-Subscription-Key", "4548c8771a124302a80b972bbca33a2b");
+
+    xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+  </script>
+    <!--
+    <div id="top-bar" class="top-bar top-bar-custom">
+        <a target="_blank" href="http://">
+        <img src="https://content.tgstatic.co.nz/webassets/assets/images/logo/square_logo_turners.png" 
+        class="top-bar-brand" alt="Site logo" onerror="this.style.display='none'">
+            <h2>Turners Search Engine</h2>
+        </a>
+    </div>
+    <div class="main-content">
+      <script type="text/javascript" 
+      id="bcs_js_snippet"
+      src="https://ui.customsearch.ai/api/ux/rendering-js?customConfig=765644ad-9eda-444c-9b99-544340bd8cdc&market=en-US&version=latest&q=">
+      </script>   
+    </div>
+    -->
+    <!--
+    <div class="bcs-container-searchbox">
+      <script src="turner.js"></script>
+      <input type ="text" id="bcs-searchbox" aria-label="Search input" class="bcs-searchbox" placeholder="Enter search term">
+      <button type="button" class="bcs-searchbox-submit" aria-label="Search" onclick="bcsSearchBoxSubmit()">
+      </button>
+      <div id="bcsSuggestionsContainer" role="listbox" aria-label="Suggestions"></div>
+    </div>
+    <div>
+      <script>
+      <h1> append(`${bcs-searchbox.value}`) </h1>
+    </script>
+    </div>
+    -->
+   <div>
+      <h2> Punctuation filter</h1>
+        <label for="esearch">Enter the String</label>
+        <input type="search" id="esearch" name="esearch">
+        <button type="submit" id="search">Search</button>
+        <br/> <br/>
+        <script>
+          
+          function filter(text){
+            var utext = esearch.value;
+             if(typeof utext !=="string"){
+               console.error("Please enter the string");
+               return;
+              }else
+              {
+                utext = utext.replace(/!/g, "");
+                utext = utext.replace(/?/g, "");
+                utext = utext.replace(/-/g, "");
+                utext = utext.replace(/;/g, "");
+              }
+              return utext;
+          }
+         
+        </script>
+    </div>
+
+</div>
+  </body>
+</html>
