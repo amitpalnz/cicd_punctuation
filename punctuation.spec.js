@@ -32,4 +32,10 @@ describe("punctuation filter",()=>{
   expect(actual).toStrictEqual(expected);
   })
 
+  it("returns 'he lloworld ' when 'he?lloworld?'", ()=>{
+    const expected = 'he lloworld ';
+  const actual =punctuation('he?lloworld?');
+  expect(actual).toStrictEqual(expected);
+  })
+
 })
