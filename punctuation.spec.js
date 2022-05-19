@@ -44,6 +44,11 @@ describe("punctuation filter",()=>{
   expect(actual).toStrictEqual(expected);
   })
 
+  it("returns 'he ll ow orld ' when 'he?ll!ow^orld?'", ()=>{
+    const expected = 'he ll ow orld ';
+  const actual =punctuation('he?ll!ow^orld?');
+  expect(actual).toStrictEqual(expected);
+  })
   
 
 })
