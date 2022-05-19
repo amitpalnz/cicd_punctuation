@@ -49,5 +49,11 @@ describe("punctuation filter",()=>{
   const actual =punctuation('he?l^l!oworld?');
   expect(actual).toStrictEqual(expected);
   })
+
+  it("returns 'he l l owo rld ' when 'he?l^l!owo!rld?'", ()=>{
+    const expected = 'he l l owo rld ';
+  const actual =punctuation('he?l^l!owo!rld?');
+  expect(actual).toStrictEqual(expected);
+  })
     
 })
