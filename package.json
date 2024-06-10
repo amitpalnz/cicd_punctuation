@@ -179,7 +179,7 @@
     "supports-hyperlinks": "^2.2.0",
     "supports-preserve-symlinks-flag": "^1.0.0",
     "terminal-link": "^2.1.1",
-    "test-exclude": "^6.0.0",
+    "test-exclude": "^7.0.0",
     "throat": "^6.0.1",
     "tmpl": "^1.0.5",
     "to-fast-properties": "^2.0.0",
